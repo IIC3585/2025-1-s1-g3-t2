@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>WASM</title>
+  </head>
+  <body>
+    <h2>Editor de Fotos</h2>
+
+    <section class="charge-and-options">
+      <p>Selecciona una imagen</p>
+      <input id="input-file" type="file" />
+    </section>
+    <section class="options">
+      <p>Selecciona un filtro</p>
+      <div>
+        <button id="black-and-white">Blanco y Negro</button>
+        <button id="blur">Desenfocar</button>
+        <button id="darken">Oscurecer</button>
+        <button id="edges">Visualizar bordes</button>
+        <button id="lighten">aclarar</button>  
+        <button id="reset">Restablecer</button>
+      </div>
+    </section>
+
+    <section class="canvas-container">
+      <div class="canvas-wrapper">
+        <p>Original</p>
+        <canvas id="canvas" width="300" height="300"></canvas>
+      </div>
+      <div class="canvas-wrapper">
+        <p>Editada</p>
+        <canvas id="canvas-effect" width="300" height="300"></canvas>
+      </div>
+    </section>
+    
+  </body>
+
+  <script src="/src/filters/filters.js"></script>
+  <script src="/src/main.js"></script>
+</html>

@@ -1,0 +1,1 @@
+emcc ./filters/filters.c -o ./filters/filters.js -s NO_EXIT_RUNTIME=1 -s EXPORTED_RUNTIME_METHODS='["cwrap"]' -s EXPORTED_FUNCTIONS='["_apply_black_and_white", "_apply_blur", "_apply_darken", "_apply_edges", "_apply_lighten", "_malloc", "_free"]'

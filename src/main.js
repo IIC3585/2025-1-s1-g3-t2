@@ -127,3 +127,19 @@ resetBtn.onclick = () => {
   ctxEffect.clearRect(0, 0, canvas.width, canvas.height);
   ctxEffect.putImageData(imageDataWorking, offsetX, offsetY);
 };
+
+
+
+/////////////////////////////////// PWA
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js')
+          .then(registration => {
+              console.log('ServiceWorker registrado con éxito:', registration.scope);
+          })
+          .catch(error => {
+              console.log('Error al registrar el ServiceWorker:', error);
+          });
+  });
+}

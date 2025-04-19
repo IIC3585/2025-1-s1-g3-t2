@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/src/style.css" />
     <title>WASM</title>
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0f172a" />
   </head>
   <body>
     <h2>Editor de Fotos</h2>
@@ -35,9 +37,18 @@
         <canvas id="canvas-effect" width="300" height="300"></canvas>
       </div>
     </section>
-    
-  </body>
 
-  <script src="/src/filters/filters.js"></script>
-  <script src="/src/main.js"></script>
+    <section class="actions">
+      <button id="save">Guardar imagen editada</button>
+      <button id="clear">Eliminar todas las imágenes guardadas</button>
+    </section>
+    
+    
+    <section class="saved-images">
+      <h3>Imágenes guardadas</h3>
+      <div id="saved-list" class="saved-list"></div>
+    </section>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>

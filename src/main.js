@@ -6,6 +6,7 @@ const darkenBtn = document.getElementById("darken");
 const edgesBtn = document.getElementById("edges");
 const lightenBtn = document.getElementById("lighten");
 const resetBtn = document.getElementById("reset");
+const notificationBtn = document.getElementById("notifications");
 
 const canvas = document.getElementById("canvas");
 const canvasEffect = document.getElementById("canvas-effect");
@@ -136,6 +137,7 @@ if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
       navigator.serviceWorker.register('/service-worker.js')
           .then(registration => {
+            window.swReg = registration;
               console.log('ServiceWorker registrado con éxito:', registration.scope);
           })
           .catch(error => {
@@ -143,3 +145,24 @@ if ('serviceWorker' in navigator) {
           });
   });
 }
+
+
+////////////////////////////////////// PUSH NOTIFICATION
+
+notificationBtn.addEventListener("click", async () =>{
+  const permission = await Notification.requestPermission();
+  if (permission === 'granted') {
+    notificationBtn.style.display = 'none';
+    new Notification("Thank You");
+    await subscribeUserToPush();
+  }
+})
+
+
+const checkNotificationPermission = () => {
+  if (Notification.permission === 'granted') {
+    notificationBtn.style.display = 'none';
+  }
+};
+
+checkNotificationPermission();

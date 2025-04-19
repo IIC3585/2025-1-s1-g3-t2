@@ -39,3 +39,18 @@ self.addEventListener('fetch', (event) => {
         })
     );
   });
+
+  self.addEventListener('push', e => {
+    const data = e.data.json();
+
+    self.registration.showNotification(data.title, {
+      body: data.body,
+      icon: data.icon || '/192x192.png',
+      badge: '/192x192.png',
+        vibrate: [200, 100, 200],
+        // data: {
+        //     url: 'http://tu-pwa.com'
+        // }
+    });
+  });
+  

@@ -10,5 +10,8 @@
   },
   "devDependencies": {
     "vite": "^6.3.1"
+  },
+  "dependencies": {
+    "web-push": "^3.6.7"
   }
 }

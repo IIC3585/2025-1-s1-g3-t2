@@ -1,3 +1,6 @@
+import { precacheAndRoute } from 'workbox-precaching';
+precacheAndRoute(self.__WB_MANIFEST);
+
 // ✅ Activación inmediata del SW
 self.addEventListener('install', event => {
   console.log('[SW] Instalado');

@@ -220,7 +220,7 @@ function showNotification(message) {
 
   if (message.includes("guardada")) {
     notify(
-      "http://localhost:3000/notify-saved",
+      "https://two025-1-s1-g3-t2.onrender.com/notify-saved",
       "📤 Notificación push de guardado enviada",
       "❌ Error enviando notificación push (guardado)"
     );
@@ -228,7 +228,7 @@ function showNotification(message) {
 
   if (message.includes("eliminadas")) {
     notify(
-      "http://localhost:3000/notify-cleared",
+      "https://two025-1-s1-g3-t2.onrender.com/notify-cleared",
       "📤 Notificación push de eliminación enviada",
       "❌ Error enviando notificación push (eliminación)"
     );
@@ -236,7 +236,7 @@ function showNotification(message) {
 
   if (message.includes("aplicado")) {
     notify(
-      "http://localhost:3000/notify-filter",
+      "https://two025-1-s1-g3-t2.onrender.com/notify-filter",
       "📤 Notificación push de efecto enviada",
       "❌ Error enviando notificación push (efecto)"
     );

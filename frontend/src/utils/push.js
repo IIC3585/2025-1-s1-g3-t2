@@ -11,7 +11,7 @@ function urlBase64ToUint8Array(base64String) {
 }
 
 const saveSubscription = async (sub) => {
-    const response = await fetch('http://localhost:3000/save-subs', {
+    const response = await fetch('https://two025-1-s1-g3-t2.onrender.com/save-subs', {
         method : 'post',
         headers : {'Content-type': 'application/json'},
         body: JSON.stringify(sub)

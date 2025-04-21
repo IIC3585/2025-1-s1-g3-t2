@@ -64,4 +64,7 @@ VAPID_PRIVATE_KEY=
 
 - [Instalación de Emscripten](https://emscripten.org/docs/getting_started/downloads.html)  
 - [Implementación de WebAssembly - Lista de reproducción en YouTube](https://www.youtube.com/watch?v=_8T9T6MQ1fU&list=PLysLvOneEETPM_YbEyZcJ35_3pSdrj33O&index=1&ab_channel=MichaelGrieco)
+- [PWA From Scratch - Lista de reproducción en YouTube](https://www.youtube.com/watch?v=sFsRylCQblw)
+- [PWA Push Notifications](https://www.youtube.com/watch?v=N9zpRvFRmj8)
+- [PWA Push Notifiactions Tutorial - Lista de reproducción en YouTube](https://www.youtube.com/watch?v=3bvWX7bgwV8)
 

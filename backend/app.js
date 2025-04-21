@@ -20,7 +20,7 @@ webpush.setVapidDetails(
 const app = express();
 const port = 3000;
 
-app.use(cors({origin: ['https://two025-1-s1-g3-t2-s99u.vercel.app', 'http://localhost:5173']}));
+app.use(cors({origin: ['https://2025-1-s1-g3-t2-s99u.vercel.app', 'http://localhost:5173']}));
 app.use(express.json());
 app.use(morgan("dev"));
 

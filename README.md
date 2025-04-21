@@ -57,3 +57,11 @@ VAPID_PRIVATE_KEY=
 | IndexedDB        | Almacenamiento de imágenes procesadas                               |
 | Web-Push         | Notificaciones en tiempo real                                       |
 | Vite PWA Plugin  | Configuración y registro automático de Service Worker y manifest    |
+| Emscripten       | Compilación del código C/C++ a WebAssembly                          |
+
+
+## 📚 Recursos consultados
+
+- [Instalación de Emscripten](https://emscripten.org/docs/getting_started/downloads.html)  
+- [Implementación de WebAssembly - Lista de reproducción en YouTube](https://www.youtube.com/watch?v=_8T9T6MQ1fU&list=PLysLvOneEETPM_YbEyZcJ35_3pSdrj33O&index=1&ab_channel=MichaelGrieco)
+

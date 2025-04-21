@@ -55,22 +55,37 @@ const enviarNotificacion = async (payload, res, label) => {
     return res.status(400).json({ error: "No hay suscriptores" });
   }
 
-  const suscriptor = subData[0];
+  let enviados = 0;
+  const indicesExpirados = [];
 
-  try {
-    await webpush.sendNotification(suscriptor, JSON.stringify(payload));
-    console.log(`📤 Notificación de ${label} enviada`);
-    res.json({ status: `Notificación de ${label} enviada con éxito` });
-  } catch (err) {
-    if (err.statusCode === 410 || err.statusCode === 404) {
-      console.warn(`⚠️ Suscripción inválida detectada (${label}). Eliminando...`);
-      const index = subData.findIndex(s => s.endpoint === suscriptor.endpoint);
-      if (index !== -1) subData.splice(index, 1); // 💥 Elimina suscripción vencida
+  // Recorremos cada suscripción
+  for (let i = 0; i < subData.length; i++) {
+    const suscriptor = subData[i];
+    try {
+      await webpush.sendNotification(suscriptor, JSON.stringify(payload));
+      enviados++;
+      console.log(`📤 Notificación de ${label} enviada a ${suscriptor.endpoint}`);
+    } catch (err) {
+      console.error(`❌ Error con ${suscriptor.endpoint}:`, err);
+      // Si la subscripción expiró o es inválida, la marcamos para eliminarla
+      if (err.statusCode === 410 || err.statusCode === 404) {
+        indicesExpirados.push(i);
+      }
     }
-
-    console.error(`❌ Error enviando notificación (${label}):`, err);
-    res.status(500).json({ error: `Falló la notificación de ${label}` });
   }
+
+  // Eliminamos las suscripciones expiradas (desde el final hacia el inicio)
+  for (let idx of indicesExpirados.sort((a, b) => b - a)) {
+    console.warn(`⚠️ Eliminando suscripción caducada: ${subData[idx].endpoint}`);
+    subData.splice(idx, 1);
+  }
+
+  // Devolvemos un resumen
+  res.json({
+    status: `Notificación de ${label}: ${enviados} envíos, ${indicesExpirados.length} eliminaciones`,
+    enviados,
+    eliminadas: indicesExpirados.length
+  });
 };
 
 

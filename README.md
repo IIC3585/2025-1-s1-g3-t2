@@ -4,6 +4,11 @@ Aplicación web progresiva (PWA) para procesamiento de imágenes con WebAssembly
 
 # Frontend
 ## Setup
+### Moverse al directorio
+```sh
+cd frontend/
+```
+
 ### Instalar las dependencias
 ```sh
 npm install
@@ -20,11 +25,29 @@ npm run build
 ```
 Para las notificaciones también hay que correr el backend.
 
+# Backend
+## Setup
+### Moverse al directorio
+```sh
+cd backend/
+```
+
+### Instalar las dependencias
+```sh
+npm install
+```
+
+### Entorno de desarrollo y producción
+```sh
+npm run dev
+```
+
+
 ## 🔧 Librerías principales
 
 | Librería         | Uso                                                                 |
 |------------------|---------------------------------------------------------------------|
 | Workbox          | Precaching de recursos para offline                                 |
 | IndexedDB        | Almacenamiento de imágenes procesadas                               |
-| Web-Push         | Notificaciones en tiempo real                                      |
-| Vite PWA Plugin  | Configuración y registro automático de Service Worker y manifest           |
+| Web-Push         | Notificaciones en tiempo real                                       |
+| Vite PWA Plugin  | Configuración y registro automático de Service Worker y manifest    |

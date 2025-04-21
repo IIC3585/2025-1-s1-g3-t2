@@ -42,6 +42,12 @@ npm install
 npm run dev
 ```
 
+### Crear el archivo .env
+```sh
+VAPID_PUBLIC_KEY=
+VAPID_PRIVATE_KEY=
+```
+
 
 ## 🔧 Librerías principales
 

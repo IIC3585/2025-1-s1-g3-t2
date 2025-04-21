@@ -44,10 +44,12 @@ npm run dev
 
 ### Crear el archivo .env
 ```sh
-VAPID_PUBLIC_KEY=
-VAPID_PRIVATE_KEY=
-```
+VAPID_PUBLIC_KEY='BPFqi1nh3Wo63O8B8CN2ouaIDqT0fD155Ie90BMGovcDCvJlw4Vrwi3LpgHBJadTro0eUHiIBkacZ4HU2jhVKKo'
 
+VAPID_PRIVATE_KEY='d9ts6uWNvlZWvXKvLT3pZxKoJYD49bhpxduL3iMvEmo'
+```
+## Deploy
+El frontend se encuentra en https://2025-1-s1-g3-t2.vercel.app/
 
 ## 🔧 Librerías principales
 
